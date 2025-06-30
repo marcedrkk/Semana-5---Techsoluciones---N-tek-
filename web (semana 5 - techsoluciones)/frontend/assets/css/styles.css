@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #0f1117;
+  --surface: #1c1f2b;
+  --text: #e6f1ff;
+  --muted: #7f8fa6;
+  --accent: #28ff0c;
+  --danger: #ff4e6a;
+  --radius: 10px;
+  --transition: 0.3s ease;
+  --font: 'Roboto Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ----- HEADER ----- */
+header {
+  background: var(--surface);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid var(--accent);
+}
+header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+header p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.auth-links {
+  text-align: right;
+  padding: 1rem 2rem;
+}
+.auth-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition);
+}
+.auth-links a:hover {
+  color: #ffffff;
+}
+
+/* ----- NAV ----- */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  background: #111319;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition);
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ----- SECTIONS ----- */
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.07);
+}
+section h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- SOBRE NOSOTROS ----- */
+.sobre-nosotros-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.imagen-empresa {
+  max-width: 300px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.15);
+}
+.texto-sobre-nosotros p {
+  font-size: 1.1rem;
+}
+
+/* ----- SERVICIOS / PROYECTOS ----- */
+.table-container {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid #2a2f45;
+}
+thead {
+  background-color: var(--accent);
+  color: #000;
+}
+td button {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+td button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ----- TESTIMONIOS ----- */
+.testimonios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.testimonio {
+  background: #141821;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+  border-radius: var(--radius);
+}
+
+/* ----- FAQ ----- */
+details {
+  background: #12151f;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* ----- FORMULARIO DE CONTACTO Y LOGIN ----- */
+form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+form input, form textarea, form select {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  background-color: #111319;
+  color: var(--text);
+}
+form input:focus, form textarea:focus {
+  border-color: var(--danger);
+  outline: none;
+}
+#error-mensaje {
+  color: var(--danger);
+  margin-top: -0.5rem;
+}
+
+/* ----- BOTONES ----- */
+.btn-general,
+form button,
+.auth-switch button {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-general:hover,
+form button:hover,
+.auth-switch button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ----- AUTENTICACIÓN ----- */
+.auth-section {
+  background: #1a1c28;
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+.auth-switch {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.auth-switch button.active {
+  background: var(--accent);
+  color: #000;
+}
+.auth-form {
+  display: none;
+}
+.auth-form.active {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+/* ----- SCROLL-TOP BUTTON ----- */
+#scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+  cursor: pointer;
+  display: none;
+  z-index: 99;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: #0c0e14;
+  border-top: 1px solid #1f2435;
+}
+.imagen-empresa {
+    text-align: center;
+}
+/*Contacto*/
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  margin: auto;
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.1);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  background-color: #111319;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
